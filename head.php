@@ -20,7 +20,7 @@ function head_with_title($title = "Orphelinat")
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
         <!-- On va linker notre css qui est dans public/build -->
         <!-- LE HTML NE SAIS PAS LIRE LE SASS/SCSS DONC TOUJOURS LINKET LE CSS -->
-        <!-- <link rel="stylesheet" href="public/build/style.css"> -->
+        <link rel="stylesheet" href="public/build/style.css">
         <title><?=$title?></title>
     </head>
 

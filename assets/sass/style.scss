@@ -1,142 +1,151 @@
-// SASS => sybtaxtically awsame Style Sheet
-// C'est un prépocesseur CSS ou superset 
-//C'est un outil qui permet d'écrire du CSS amélioré, puis de le compiler en CSS standard
-//Que rajoute le SASS au CSS ,
+// // SASS => sybtaxtically awsame Style Sheet
+// // C'est un prépocesseur CSS ou superset 
+// //C'est un outil qui permet d'écrire du CSS amélioré, puis de le compiler en CSS standard
+// //Que rajoute le SASS au CSS ,
 
-/*
-*Variables
-*Imbrication (nesting)
-*Imports
-*Mixins (fonctions)
-*Heritages
-*Calculs
-*Conditions et des boucles
+// /*
+// *Variables
+// *Imbrication (nesting)
+// *Imports
+// *Mixins (fonctions)
+// *Heritages
+// *Calculs
+// *Conditions et des boucles
 
-*/
+// */
 
-@use 'sass:math';
+// @use 'sass:math';
 
-@use 'sass:list';
+// @use 'sass:list';
 
-//comme un console log mais se voit dans le terminal
-// @debug 4px * 12%;
-
-
-// Liste 
-
-$color-liste: red, blue, green;
-
-// exemple concret de liste avec boucle
-
-$flex-direction: row, column;
-$justify-content: center, space-between, space-evenly, space-around, start, end;
-$align-items: start, end, center, stretch;
+// //comme un console log mais se voit dans le terminal
+// // @debug 4px * 12%;
 
 
-//boucle prendre tous les éléments d un tableau
-@each $direction in $flex-direction {
-    @each $jc in $justify-content {
-        @each $ai in $align-items {
-            .flex-#{$direction}-#{$jc}-#{$ai} {
-                display: flex;
-                flex-direction: $direction;
-                justify-content: $jc;
-                align-items: $ai;
-                flex-wrap: wrap;
-            }
-        }
-    }
-}
+// // Liste 
+
+// $color-liste: red, blue, green;
+
+// // exemple concret de liste avec boucle
+
+// $flex-direction: row, column;
+// $justify-content: center, space-between, space-evenly, space-around, start, end;
+// $align-items: start, end, center, stretch;
 
 
-//boucle for 
-
-$base-color: rgb(26, 63, 12) ;
-@for $i from 1 through 50{
-    .square-#{$i}{
-     background-color: adjust-color($base-color, $lightness: $i*2%);
-     height: 50px;
-     width: 50px;
-    }
-}
-
-
-
-
-.color-test{
-    // nth( variable, et index) - l index commence par 1 en sass
-    color: list.nth($color-liste, 2);
-}
-
-
-
-
-
-h1{
-    text-align: center;
-}
-
-
-$button_validation_color: rgb(64, 64, 146);
-// //Fonction qui rend un button plus foncé 
-// @function hover-dark($color) {
-//     @return darken($color, 10%)
-// }
-
-// $button_validation_color_hover: darken($button_validation_color, 10%);
-
-
-
-// .btn-validation {
-//     padding: 0.5rem 1rem;
-//     border: none;
-//     background-color: $button_validation_color;
-//     color: white;
-//     border-radius: 12px;
-//     &:hover{
-//         background-color: hover-dark($button_validation_color_hover);
-//         cursor: pointer;
+// //boucle prendre tous les éléments d un tableau
+// @each $direction in $flex-direction {
+//     @each $jc in $justify-content {
+//         @each $ai in $align-items {
+//             .flex-#{$direction}-#{$jc}-#{$ai} {
+//                 display: flex;
+//                 flex-direction: $direction;
+//                 justify-content: $jc;
+//                 align-items: $ai;
+//                 flex-wrap: wrap;
+//             }
+//         }
 //     }
 // }
 
-@mixin zero_box{
-    margin: 0;
-    padding: 0;
-}
 
-*{
-    @include zero_box;
-    box-sizing: border-box;
-}
+// //boucle for 
 
-//Exemple de mixin d'élément
+// $base-color: rgb(26, 63, 12) ;
+// @for $i from 1 through 50{
+//     .square-#{$i}{
+//      background-color: adjust-color($base-color, $lightness: $i*2%);
+//      height: 50px;
+//      width: 50px;
+//     }
+// }
 
-@mixin reset_list {
-    @include zero_box;
-padding: 0;
-list-style: none;
-}
 
-.list{
-    @include reset_list ;
-    li:first-child {
-        font-size: 2rem;
-        color: red;
-    }
-}
 
-//extend : ajoute les class
 
-.error{
-    border: 1px solid red;
-    color: red;
-    &-very-important{
-        @extend .error;
-        border-width: 3px;
-    }
+// .color-test{
+//     // nth( variable, et index) - l index commence par 1 en sass
+//     color: list.nth($color-liste, 2);
+// }
+
+
+
+
+
+// h1{
+//     text-align: center;
+// }
+
+
+// $button_validation_color: rgb(64, 64, 146);
+// // //Fonction qui rend un button plus foncé 
+// // @function hover-dark($color) {
+// //     @return darken($color, 10%)
+// // }
+
+// // $button_validation_color_hover: darken($button_validation_color, 10%);
+
+
+
+// // .btn-validation {
+// //     padding: 0.5rem 1rem;
+// //     border: none;
+// //     background-color: $button_validation_color;
+// //     color: white;
+// //     border-radius: 12px;
+// //     &:hover{
+// //         background-color: hover-dark($button_validation_color_hover);
+// //         cursor: pointer;
+// //     }
+// // }
+
+// @mixin zero_box{
+//     margin: 0;
+//     padding: 0;
+// }
+
+// *{
+//     @include zero_box;
+//     box-sizing: border-box;
+// }
+
+// //Exemple de mixin d'élément
+
+// @mixin reset_list {
+//     @include zero_box;
+// padding: 0;
+// list-style: none;
+// }
+
+// .list{
+//     @include reset_list ;
+//     li:first-child {
+//         font-size: 2rem;
+//         color: red;
+//     }
+// }
+
+// //extend : ajoute les class
+
+// .error{
+//     border: 1px solid red;
+//     color: red;
+//     &-very-important{
+//         @extend .error;
+//         border-width: 3px;
+//     }
        
+// }
+
+
+footer{
+    padding: 2rem 0;
+    background-color: black;
+    width: 100%;
+    ul {
+        list-style: none;
+        padding:0;
+        margin:0;
+    }
 }
-
-
-
 

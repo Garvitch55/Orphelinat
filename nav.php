@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <!-- Logo / ou nom du site -->
-    <a class="navbar-brand" href="#">Orphelinat de Ladace</a>
+    <a class="navbar-brand" href="./">Orphelinat de Ladace</a>
     <!-- burger du responsive -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
           </a>
           <!-- affichage la liste dropdown -->
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Ajouter un pensionnaire</a></li>
+            <li><a class="dropdown-item" href="views/children/add_children_form.php">Ajouter un pensionnaire</a></li>
             <li><a class="dropdown-item" href="#">Modifier un pensionnaire</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Suppression d'un pensionnaire</a></li>
